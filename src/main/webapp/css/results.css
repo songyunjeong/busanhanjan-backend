@@ -1,0 +1,99 @@
+body {
+  background-color: #eaf8ff;
+  background-image: url("../images/result_bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-top: 110px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  width: 100%;
+  height: 74px;
+  background-color: #fff;
+  border-bottom: 2px solid #eaeaea;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+.header__title {
+  width: 450px;
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 42px;
+  line-height: 74px;
+  color: #00cbcb;
+  padding: 5px 24px 0px 14px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.header__title i {
+  font-size: 40px;
+  color: #00cbcb;
+}
+
+.character {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.result {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.result .box {
+  min-height: 70px;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  line-height: 1.4;
+  text-align: center;
+}
+.result h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-align: center;
+  font-size: 30pt;
+  color: #00cbcb;
+}
+.result .recs {
+  height: 200px;
+  display: flex;
+  gap: 10px;
+}
+.result .rec {
+  flex: 1;
+  border: 1px solid #ffe603;
+  border-radius: 20px;
+  background-color: #ffffff;
+  background-image: url("/images/game/result_star.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  line-height: 1.4;
+  text-align: center;
+}
+.result img {
+  width: 100%;
+  margin-bottom: 40px;
+}
