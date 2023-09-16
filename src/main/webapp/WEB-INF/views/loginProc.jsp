@@ -43,10 +43,9 @@
 		<div class="wrap">
 			<div class="login-area">		
 				<h2>로그인 되었습니다.</h2><br />
-				<h4>${message}</h4>
-				<br /><br />		
-				<input type="hidden" name="command" value="logout" />
-				<input type="submit" value="로그아웃" />
+				<h4>[ ${loginId} ]님의 방문을 환영합니다!</h4>
+				<br /><br />
+				<a href="./loginController.jsp?command=logout">로그아웃</a>
 			</div>
 		</div>
 	</body>
