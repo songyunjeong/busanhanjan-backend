@@ -45,7 +45,7 @@
 				<h2>로그인 되었습니다.</h2><br />
 				<h4>[ ${loginId} ]님의 방문을 환영합니다!</h4>
 				<br /><br />
-				<a href="./loginController.jsp?command=logout">로그아웃</a>
+				<button><a href="./loginController.jsp?command=logout">로그아웃</a></button>
 			</div>
 		</div>
 	</body>

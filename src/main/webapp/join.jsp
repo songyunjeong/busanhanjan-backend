@@ -12,7 +12,7 @@
       href="./images/main/logoicon-cup.ico"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/join.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -36,22 +36,21 @@
           <a href="./map2.jsp">지도보기</a>
         </div>
         <div class="nav5 nowpage">
-          <a href="./loginController.jsp">로그인</a>
+          <a href="./loginController.jsp">회원가입</a>
         </div>
       </div>
     </header>
     <div class="wrap">
-      <div class="login-area">
-        <form method="POST">
-          <label for="id" class="id">아이디</label>
-          <input type="text" name="id" id="id" /><br /><br />
-          <label for="pwd" class="pwd">패스워드</label>
-          <input type="password" name="pwd" id="pwd" /><br /><br />
-          <h4 class="error">${message}</h4><br /><br />
-          <button><a href="./join.jsp">회원가입</a></button>
-          <input type="hidden" name="command" value="login" />
-          <input type="submit" value="로그인" />
-        </form>
+      <div class="join-area">
+      	<fieldset>
+      		<legend><h2>회원가입</h2></legend>
+	      	<label for="id" class="id">아이디</label>
+	      	<input type="text" name="id" /><br />
+	      	<label for="pwd" class="pwd">비밀번호</label>
+	      	<input type="password" name="pwd" /><br />
+	      	<label for="pwd" class="pwd">비밀번호 확인</label>
+	      	<input type="password" name="pwd" />
+      	</fieldset>
       </div>
     </div>
   </body>

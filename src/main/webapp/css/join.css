@@ -1,0 +1,84 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+
+* {
+  font-family: "Black Han Sans", "Pretendard Variable", sans-serif;
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+}
+
+/* header */
+.header {
+  width: 100%;
+  height: 74px;
+  background-color: #fff;
+  border-bottom: 2px solid #eaeaea;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+
+.header__title {
+  width: 450px;
+  font-family: "Black Han Sans", sans-serif;
+  font-size: 42px;
+  line-height: 74px;
+  color: #00cbcb;
+  padding: 5px 24px 0px 14px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.header__title i {
+  font-size: 40px;
+  color: #00cbcb;
+}
+
+/* nav */
+.nav {
+  display: flex;
+  justify-content: right;
+  font-size: x-large;
+  font-weight: 900;
+  line-height: 74px;
+  float: right;
+  margin-right: 80px;
+}
+
+.nav > div {
+  padding-left: 50px;
+}
+
+.nav .nowpage a {
+  color: #00cbcb;
+}
+
+/* wrap */
+.wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* join */
+.join-area fieldset {
+	padding: 20px;
+}
+
+.join-area .id,
+.join-area .pwd {
+  display: inline-block;
+  width: 100px;
+  margin-bottom: 10px;
+}
