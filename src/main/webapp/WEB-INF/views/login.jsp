@@ -48,7 +48,7 @@
           <label for="pwd" class="pwd">패스워드</label>
           <input type="password" name="pwd" id="pwd" /><br /><br />
           <h4 class="error">${message}</h4><br /><br />
-          <button><a href="./join.jsp">회원가입</a></button>
+          <button><a href="./joinController.jsp">회원가입</a></button>
           <input type="hidden" name="command" value="login" />
           <input type="submit" value="로그인" />
         </form>
