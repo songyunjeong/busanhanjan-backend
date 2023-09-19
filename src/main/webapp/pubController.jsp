@@ -31,7 +31,7 @@ if (request.getMethod().equals("POST")) {
 
 		// 전체 검색    
 	} else {
-		pubList = pubDAO.getPubInfo();
+		pubList = pubDAO.getPubInfo(filterByStar);
 	}
 
 	request.setAttribute("pubList", pubList);
