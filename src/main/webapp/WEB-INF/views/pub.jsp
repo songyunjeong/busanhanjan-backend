@@ -65,6 +65,37 @@
 		</form>
 	<hr />
 
+	<form method="POST">
+		<fieldset>
+			<legend>입력</legend>
+<!-- 이름, 메뉴, 술, 카테고리, 주소, 전화번호, 별점, 좋아요, 관리자확인, 홈페이지, 사진링크 			 -->
+				
+			<label for="pname">이름</label>
+			<input type="text" name="pname" id="pname"/> 
+			
+			<label for="insert_menu">메뉴</label>
+			<input type="text" name="insert_menu" id="insert_menu"/> 
+
+			<label for="alcohol">술</label>
+			<input type="text" name="alcohol" id="alcohol"/> 
+
+			<label for="category">카테고리</label>
+			<input type="text" name="category" id="category"/> 
+
+			<label for="place">주소</label>
+			<input type="text" name="place" id="place"/> 
+
+			<label for="tel">전화번호</label>
+			<input type="text" name="tel" id="tel"/> 
+
+			<label for="star">별점</label>
+			<input type="number" name="star" id="star"/> 
+
+			<input type="submit" value="입력" />
+		</fieldset>
+		</form>
+	<hr />
+
   <h3>가게 목록</h3>
         <label for="filterCheckBox">별점 4점 이상만 보기</label>
         <input type="checkbox" id="filterCheckBox" name="filterByStar" value="true">
@@ -104,6 +135,5 @@
                 </c:forEach>
             </tbody>
         </table>
-
 </body>
 </html>

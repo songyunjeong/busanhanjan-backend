@@ -24,13 +24,13 @@ ALTER SESSION SET NLS_LANGUAGE = 'AMERICAN';
 -- PUB 테이블 생성
 
 CREATE TABLE pub (
-    pno NUMBER(7) PRIMARY KEY,
-    pname VARCHAR2(45) NOT NULL,
-    menu VARCHAR2(45) NOT NULL,
+    pno NUMBER(7),
+    pname VARCHAR2(45),
+    menu VARCHAR2(45),
     alcohol VARCHAR2(45),
     category VARCHAR2(15),
     place VARCHAR2(120),
-    tel VARCHAR2(45) UNIQUE,
+    tel VARCHAR2(45),
     star NUMBER(4,2),
     plike NUMBER(4),
     acheck NUMBER(1),
