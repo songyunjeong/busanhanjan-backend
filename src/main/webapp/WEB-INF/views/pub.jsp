@@ -44,50 +44,26 @@
 	<form method="POST">
 		<fieldset>
 			<legend>가게 검색</legend>
-<!-- 			<label for="pno">번호: </label> -->
-<!-- 			<input type="number" name="pno" id="pno" required />  -->
-			
+
 			<label for="keyword">이름 또는 지역</label>
-			<input type="text" name="keyword" id="keyword" required /> 
+			<input type="text" name="keyword" id="keyword"/> 
 			
-<!-- 			<label for="place">주소: </label> -->
-<!-- 			<input type="text" name="place" id="place" required /> -->
-<!-- 			<input type="submit" value="등록" /> -->
 			<input type="submit" value="검색" />
 		</fieldset>
+		</form>
+
 	<hr />
-
-<!-- 	<h3>가게 목록</h3> -->
-<!-- 	<ul> -->
-<!-- 			<li class="pub-info">번호 | 가게명 | 주소 | 전화번호 | 별점</li> -->
-<%-- 		<c:forEach items="${pubList}" var="pubDO"> --%>
-<%-- 			<li class="pub-info">${pubDO.pno} | ${pubDO.pname} | ${pubDO.place} | ${pubDO.tel} | ${pubDO.star}</li> --%>
-<%-- 		</c:forEach> --%>
-<!-- 	</ul> -->
-
-<!--  <h3>가게 목록</h3> -->
-<!--     <table> -->
-<!--         <thead> -->
-<!--             <tr> -->
-<!--                 <th>번호</th> -->
-<!--                 <th>가게명</th> -->
-<!--                 <th>주소</th> -->
-<!--                 <th>전화번호</th> -->
-<!--                 <th>별점</th> -->
-<!--             </tr> -->
-<!--         </thead> -->
-<!--         <tbody> -->
-<%--             <c:forEach items="${pubList}" var="pubDO"> --%>
-<!--                 <tr> -->
-<%--                     <td>${pubDO.pno}</td> --%>
-<%--                     <td>${pubDO.pname}</td> --%>
-<%--                     <td>${pubDO.place}</td> --%>
-<%--                     <td>${pubDO.tel}</td> --%>
-<%--                     <td>${pubDO.star}</td> --%>
-<!--                 </tr> -->
-<%--             </c:forEach> --%>
-<!--         </tbody> -->
-<!--     </table> -->
+	<form method="POST">
+		<fieldset>
+			<legend>메뉴 검색</legend>
+			
+			<label for="menu">메뉴</label>
+			<input type="text" name="menu" id="menu"/> 
+			
+			<input type="submit" value="검색" />
+		</fieldset>
+		</form>
+	<hr />
 
   <h3>가게 목록</h3>
         <label for="filterCheckBox">별점 4점 이상만 보기</label>
@@ -95,37 +71,39 @@
         <table>
             <thead>
                 <tr>
-                    <th>번호</th>
-                    <th>가게명</th>
-                    <th>주소</th>
-                    <th>전화번호</th>
                     <th>별점</th>
+                    <th>이름</th>
+                    <th>주메뉴</th>
+                    <th>주류</th>
+                    <th>위치</th>
+                    <th>전화번호</th>
                 </tr>
             </thead>
             <tbody>
                 <c:forEach items="${pubList}" var="pubDO">
                     <c:if test="${not empty param.filterByStar and pubDO.star >= 4}">
                         <tr>
-                            <td>${pubDO.pno}</td>
+                            <td>${pubDO.star}</td>
                             <td>${pubDO.pname}</td>
+                            <td>${pubDO.menu}</td>
+                            <td>${pubDO.alcohol}</td>
                             <td>${pubDO.place}</td>
                             <td>${pubDO.tel}</td>
-                            <td>${pubDO.star}</td>
                         </tr>
                     </c:if>
                     <c:if test="${empty param.filterByStar}">
                         <tr>
-                            <td>${pubDO.pno}</td>
+                            <td>${pubDO.star}</td>
                             <td>${pubDO.pname}</td>
+                            <td>${pubDO.menu}</td>
+                            <td>${pubDO.alcohol}</td>
                             <td>${pubDO.place}</td>
                             <td>${pubDO.tel}</td>
-                            <td>${pubDO.star}</td>
                         </tr>
                     </c:if>
                 </c:forEach>
             </tbody>
         </table>
-    </form>
 
 </body>
 </html>

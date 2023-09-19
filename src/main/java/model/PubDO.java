@@ -7,13 +7,16 @@ public class PubDO {
 
 	private int pno;
 	private String pname;
+	private String menu;
+	private String alcohol;
+	private String category;
 	private String place;
 	private String tel;
+	private double star;
 	private int plike;
-	private long star;
-	private long category;
-	private String link;
+	private int acheck;
 	private String homepage;	
+	private String link;
 
 	public PubDO() {
 	}
@@ -34,6 +37,30 @@ public class PubDO {
 		this.pname = pname;
 	}
 
+	public String getMenu() {
+		return menu;
+	}
+
+	public void setMenu(String menu) {
+		this.menu = menu;
+	}
+
+	public String getAlcohol() {
+		return alcohol;
+	}
+
+	public void setAlcohol(String alcohol) {
+		this.alcohol = alcohol;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	public String getPlace() {
 		return place;
 	}
@@ -50,6 +77,14 @@ public class PubDO {
 		this.tel = tel;
 	}
 
+	public double getStar() {
+		return star;
+	}
+
+	public void setStar(double star) {
+		this.star = star;
+	}
+
 	public int getPlike() {
 		return plike;
 	}
@@ -58,28 +93,12 @@ public class PubDO {
 		this.plike = plike;
 	}
 
-	public long getStar() {
-		return star;
+	public int getAcheck() {
+		return acheck;
 	}
 
-	public void setStar(long star) {
-		this.star = star;
-	}
-
-	public long getCategory() {
-		return category;
-	}
-
-	public void setCategory(long category) {
-		this.category = category;
-	}
-
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
+	public void setAcheck(int acheck) {
+		this.acheck = acheck;
 	}
 
 	public String getHomepage() {
@@ -89,4 +108,13 @@ public class PubDO {
 	public void setHomepage(String homepage) {
 		this.homepage = homepage;
 	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+	
 }
