@@ -17,6 +17,12 @@ li {
   padding: 0;
 }
 
+label {
+  display: inline-block;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
 /* header */
 .header {
   width: 100%;
@@ -69,16 +75,22 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 /* join */
 .join-area fieldset {
-	padding: 20px;
+  padding: 20px;
+  text-align: left;
 }
 
-.join-area .id,
-.join-area .pwd {
-  display: inline-block;
-  width: 100px;
-  margin-bottom: 10px;
+.join-area #username,
+.join-area #id,
+.join-area #pwd,
+.join-area #email {
+  font-family: sans-serif;
+}
+
+.join-area .join_btn {
+  margin: 0 auto;
 }
