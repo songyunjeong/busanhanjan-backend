@@ -18,10 +18,6 @@
 		String searchPname = request.getParameter("pname");
 		boolean filterByStar = Boolean.parseBoolean(request.getParameter("filterByStar"));
 	
-		// 임시
-// 		boolean filterByStar = (request.getSession().getAttribute("filterByStar") != null) ? (boolean) request.getSession().getAttribute("filterByStar") : false;
-// 		request.getSession().setAttribute("filterByStar", filterByStar);
-		
 		ArrayList<PubDO> pubList;
 	
 			System.out.println(filterByStar + " / " + searchKeyword + " / " + searchMenu + " / " + searchAlcohol);
@@ -34,7 +30,6 @@
 	
 		// 메뉴 검색
 		else if (searchMenu != null) {
-// 			pubList = pubDAO.searchPubByMenu(searchMenu, filterByStar);
 			pubList = pubDAO.searchPubByMenu(searchMenu, searchAlcohol, filterByStar);
 			request.setAttribute("pubList", pubList);
 		}

@@ -48,7 +48,6 @@
 <!-- 		<input type="checkbox" id="filterCheckBox" name="filterByStar" value="true"> -->
 <!-- 		<label for="filterCheckBox">별점 4점 이상만 보기</label> -->
 		<br />
-<!-- 		<fieldset> -->
 		<form method="POST" class="float float_first">
 			<fieldset>
 				<legend>가게 검색</legend>
@@ -72,7 +71,6 @@
 				<input type="submit" value="검색" required />
 			</fieldset>
 		</form>	
-<!-- 		</fieldset> -->
 		
 		<form method="POST" class="float_clear">
 			<fieldset>
@@ -102,13 +100,6 @@
 		<br />
 
 		<h2>가게 목록</h2>
-<!-- 		<label for="filterCheckBox">별점 4점 이상만 보기</label> -->
-<!-- 		<input type="checkbox" id="filterCheckBox" name="filterByStar" -->
-<!-- 			value="true"> -->
-
-<!-- 임시 -->
-<!-- 		<label for="filterCheckBox">별점 4점 이상만 보기</label> -->
-<%-- <input type="checkbox" id="filterCheckBox" name="filterByStar" value="true" <%= (filterByStar) ? "checked" : "" %>> --%>
 			
 		<br />
 		<table>
