@@ -41,54 +41,78 @@
 		</div>
 	</header>
 	
+
 	<div class="contents">
+
 		<h2>가게 등록 및 조회</h2>
+<!-- 		<input type="checkbox" id="filterCheckBox" name="filterByStar" value="true"> -->
+<!-- 		<label for="filterCheckBox">별점 4점 이상만 보기</label> -->
 		<br />
+<!-- 		<fieldset> -->
 		<form method="POST">
 			<fieldset>
 				<legend>가게 검색</legend>
 	
-				<label for="keyword">이름 또는 지역 </label> <input type="text"
-					  name="keyword" id="keyword" /> <input type="submit" value="검색" />
+				<label for="keyword">이름 또는 지역 </label>
+				<input type="text" name="keyword" id="keyword" />
+				<input type="submit" id="filterCheckBox" value="검색" />
+				
 			</fieldset>
 		</form>
 		<br />
+		
 		<form method="POST">
 			<fieldset>
 				<legend>메뉴 검색</legend>
 	
-				<label for="menu">메뉴</label> <input type="text" name="menu"
-						id="menu" /> <input type="submit" value="검색" />
+				<label for="menu">음식</label>
+				<input type="text" name="menu" id="menu" /> 
+
+				<label for="alcohol">술</label>
+				<input type="text" name="alcohol" id="alcohol" /> 
+				<input type="submit" value="검색" required />
 			</fieldset>
 		</form>	
+<!-- 		</fieldset> -->
 		<br />
 
+		
 		<form method="POST">
 			<fieldset>
 				<legend>입력</legend>
 	
 				<label for="star">별점</label>
-				<input type="number" name="star" id="star" size="2" /> <label for="pname">이름</label> 
-				<input type="text"
-					name="pname" id="pname" /> <label for="insert_menu">메뉴</label> <input
-					type="text" name="insert_menu" id="insert_menu" /> <label
-					for="alcohol">술</label> <input type="text" name="alcohol"
-					id="alcohol" />
+				<input type="number" name="star" id="star" size="2" />
+
+				<label for="pname">이름</label> 
+				<input type="text" name="pname" id="pname" />
+
+				<label for="insert_menu">메뉴</label>
+				<input type="text" name="insert_menu" id="insert_menu" />
+
+				<label for="alcohol">술</label>
+				<input type="text" name="alcohol" id="alcohol" />
 	
-				<!-- 			<label for="category">카테고리</label> -->
-				<!-- 			<input type="text" name="category" id="category"/>  -->
-	
-				<label for="place">주소</label> <input type="text" name="place" id="place" size="50" /> 
-				<label for="tel">전화번호</label> <input type="text" name="tel" id="tel" /> <input type="submit" value="입력" />
+				<label for="place">주소</label>
+				<input type="text" name="place" id="place" size="50" /> 
+				
+				<label for="tel">전화번호</label>
+				<input type="text" name="tel" id="tel" />
+				<input type="submit" value="입력" />
 			</fieldset>
 		</form>
 		<br />
 		<br />
 
 		<h2>가게 목록</h2>
-		<label for="filterCheckBox">별점 4점 이상만 보기</label>
-		<input type="checkbox" id="filterCheckBox" name="filterByStar"
-			value="true">
+<!-- 		<label for="filterCheckBox">별점 4점 이상만 보기</label> -->
+<!-- 		<input type="checkbox" id="filterCheckBox" name="filterByStar" -->
+<!-- 			value="true"> -->
+
+<!-- 임시 -->
+<!-- 		<label for="filterCheckBox">별점 4점 이상만 보기</label> -->
+<%-- <input type="checkbox" id="filterCheckBox" name="filterByStar" value="true" <%= (filterByStar) ? "checked" : "" %>> --%>
+			
 		<br />
 		<table>
 			<thead>
@@ -128,6 +152,7 @@
 		</table>
 		<br />
 		<br />
+		
 	</div>
 </body>
 </html>
