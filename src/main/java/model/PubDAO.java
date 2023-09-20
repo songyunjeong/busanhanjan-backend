@@ -81,6 +81,7 @@ public class PubDAO {
 //			}
 //		}
 
+	// 술맛집 입력
 	public int insertPubInfo(PubDO pubDO) {
 		int rowCount = 0;
 
@@ -113,6 +114,7 @@ public class PubDAO {
 		return rowCount;
 	}
 
+	// 전체 조회
 	public ArrayList<PubDO> getPubInfo(boolean filterByStar) {
 		ArrayList<PubDO> pubList = new ArrayList<PubDO>();
 
