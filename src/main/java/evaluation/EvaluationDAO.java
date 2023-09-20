@@ -9,25 +9,33 @@ import util.DatabaseUtil;
 
 public class EvaluationDAO {
 	public int write (Evaluation evaluation) {
-		String sql = "INSERT INTO evaluation VALUES(NULL, null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)";
+		String sql = "INSERT INTO evaluation VALUES(?, null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)";
+		String seqSql = "select evaluation_seq.NEXTVAL from dual";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		
 		try {
 			conn = DatabaseUtil.getConnection();
 			pstmt = conn.prepareStatement(sql);
-		//	pstmt.setString(1, evaluation.getUserID().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setString(1, evaluation.getLectureName().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setString(2, evaluation.getProfessorName().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setInt(3, evaluation.getLectureYear());
-			pstmt.setString(4, evaluation.getSemesterDivide().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setString(5, evaluation.getLectureDivide().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setString(6, evaluation.getEvaluationTitle().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setString(7, evaluation.getEvaluationContent().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setString(8, evaluation.getTotalScore().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setString(9, evaluation.getCreditScore().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setString(10, evaluation.getComfortableScore().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
-			pstmt.setString(11, evaluation.getLectureScore().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));  
+			rs = pstmt.executeQuery(seqSql);
+			rs.next();
+			int seq = rs.getInt(1);
+			pstmt.close();
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, seq);
+			pstmt.setString(2, evaluation.getLectureName().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
+			pstmt.setString(3, evaluation.getProfessorName().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
+			pstmt.setInt(4, evaluation.getLectureYear());
+			pstmt.setString(5, evaluation.getSemesterDivide().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
+			pstmt.setString(6, evaluation.getLectureDivide().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
+			pstmt.setString(7, evaluation.getEvaluationTitle().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
+			pstmt.setString(8, evaluation.getEvaluationContent().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
+			pstmt.setString(9, evaluation.getTotalScore().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
+			pstmt.setString(10, evaluation.getCreditScore().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
+			pstmt.setString(11, evaluation.getComfortableScore().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));
+			pstmt.setString(12, evaluation.getLectureScore().replaceAll("<", "&lt;").replaceAll("<", "&gt;").replaceAll("\r\n", "<br>"));  
 		     
 			return pstmt.executeUpdate();
 		} catch(Exception e) {

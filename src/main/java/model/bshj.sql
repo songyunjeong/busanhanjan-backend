@@ -169,7 +169,7 @@ VALUES ('조해동', 'johd', 'efgh', 'johd@gmail.com');
 
 -- EVALUATION 테이블 생성
 CREATE TABLE EVALUATION (
-	evaluationID number(10),
+	evaluationID number(30),
 	userID varchar2(20),
 	lectureName varchar2(50),
 	professorName varchar2(20),
@@ -185,19 +185,19 @@ CREATE TABLE EVALUATION (
 	likeCount number(10)
 );
 
-CREATE SEQUENCE evaluation_seq START WITH 1 INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
+CREATE SEQUENCE evaluation_seq INCREMENT BY 1 MAXVALUE 100 CYCLE NOCACHE;
 
 -- EVALUATION 샘플 데이터
-INSERT INTO evaluation (lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
-VALUES ('감귤주', '8,200원', '2019', '여름', '술', '시트러스 계열 좋아하시면 추천', '감귤주 맛있어요<br>평소에도 하이볼 대신 마셔도 좋아요', 'B', 'A', 'C', 'B', 5);
-INSERT INTO evaluation (lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
-VALUES ('심해주', '30,000원', '2022', '여름', '술', '전통주 치고 괜찮아요.', '전통주를 별로 안좋아하는 편인데<br>술맛이 깔끔하고 좋습니다.<br>가격도 괜찮은거 같아요.', 'C', 'A', 'C', 'B', 0);
-INSERT INTO evaluation (lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
-VALUES ('몰틀리', '구서', '2019', '가을', '식사', '맛있게 먹고 갑니다', '술과 안주 모두 맛있고<br>고급스럽고 깔끔한 인테리어가 참 좋네요<br><br>가볍게 먹기 좋은 스낵메뉴와 다양한 종류의 술이 있어서 간단하게 한잔 할 때도 돚흥ㄹ 것 같아요. 떡볶이, 피자, 파스타, 치킨 등 다양한 메뉴들이 있어서 회식이나 데이트 하기에 좋은 곳이라고 생각이 듭니다', 'B', 'B', 'C', 'B', 2);
-INSERT INTO evaluation (lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
-VALUES ('역전 할머니 맥주', '금정구', '2021', '여름', '안주', '가격이 싸요', '새로 나온 신메뉴와 하이볼을 마셨는데<br>2차로 알콜 충전하러 가기 좋습니다.<br><br>다양한 안주와 합리적인 가격 조용한 분위기<br>가성비 좋아요', 'A', 'A', 'A', 'A', 0);
-INSERT INTO evaluation (lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
-VALUES ('호맥', '금정구', '2023', '봄', '안주', '맛있어요', '호가든 로제 생맥으로 먹을 수 있는 곳이에요.<br>크림 새우 호떡 넘 맛나요<br>맥주랑 안주랑 딱이에요<br>빔으로 보내는 영상이랑 음악도 분위기 있게 잘 먹고 갑니다', 'B', 'C', 'B', 'A', 1);
+INSERT INTO evaluation (evaluationID, lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
+VALUES (evaluation_seq.NEXTVAL, '감귤주', '8,200원', '2019', '여름', '술', '시트러스 계열 좋아하시면 추천', '감귤주 맛있어요<br>평소에도 하이볼 대신 마셔도 좋아요', 'B', 'A', 'C', 'B', 5);
+INSERT INTO evaluation (evaluationID, lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
+VALUES (evaluation_seq.NEXTVAL, '심해주', '30,000원', '2022', '여름', '술', '전통주 치고 괜찮아요.', '전통주를 별로 안좋아하는 편인데<br>술맛이 깔끔하고 좋습니다.<br>가격도 괜찮은거 같아요.', 'C', 'A', 'C', 'B', 0);
+INSERT INTO evaluation (evaluationID, lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
+VALUES (evaluation_seq.NEXTVAL, '몰틀리', '구서', '2019', '가을', '식사', '맛있게 먹고 갑니다', '술과 안주 모두 맛있고<br>고급스럽고 깔끔한 인테리어가 참 좋네요<br><br>가볍게 먹기 좋은 스낵메뉴와 다양한 종류의 술이 있어서 간단하게 한잔 할 때도 돚흥ㄹ 것 같아요. 떡볶이, 피자, 파스타, 치킨 등 다양한 메뉴들이 있어서 회식이나 데이트 하기에 좋은 곳이라고 생각이 듭니다', 'B', 'B', 'C', 'B', 2);
+INSERT INTO evaluation (evaluationID, lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
+VALUES (evaluation_seq.NEXTVAL, '역전 할머니 맥주', '금정구', '2021', '여름', '안주', '가격이 싸요', '새로 나온 신메뉴와 하이볼을 마셨는데<br>2차로 알콜 충전하러 가기 좋습니다.<br><br>다양한 안주와 합리적인 가격 조용한 분위기<br>가성비 좋아요', 'A', 'A', 'A', 'A', 0);
+INSERT INTO evaluation (evaluationID, lectureName, professorName, lectureYear, semesterDivide, lectureDivide, evaluationTitle, evaluationContent, totalScore, creditScore, comfortableScore,lectureScore, likeCount)
+VALUES (evaluation_seq.NEXTVAL, '호맥', '금정구', '2023', '봄', '안주', '맛있어요', '호가든 로제 생맥으로 먹을 수 있는 곳이에요.<br>크림 새우 호떡 넘 맛나요<br>맥주랑 안주랑 딱이에요<br>빔으로 보내는 영상이랑 음악도 분위기 있게 잘 먹고 갑니다', 'B', 'C', 'B', 'A', 1);
 
 -- LIKEY 테이블 생성
 CREATE TABLE LIKEY (

@@ -44,7 +44,6 @@
 			System.out.println("검색 페이지 번호 오류");
 			
 		}
-
 %>
 	<header class="header">
       <a href="./index.jsp" class="header__title">
@@ -94,7 +93,6 @@
 	evaluationList = new EvaluationDAO().getList(lectureDivide, searchType, search, pageNumber);
 	if(evaluationList != null) 
 		for(int i = 0; i < evaluationList.size(); i++) {
-			if(i == 5) break;
 			Evaluation evaluation = evaluationList.get(i);
 %>
 		<div class="card bg-light mt-3">
