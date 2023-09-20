@@ -26,14 +26,10 @@
 		return;
 	}
 	
-
-	
-	
-	
 	PrintWriter script = response.getWriter();
 	script.println("<script>");
 	script.println("alert('정상적으로 신고되었습니다.');");
-	script.println("history.back();");
+	script.println("location.href = 'review.jsp'");
 	script.println("</script>");
 	script.close();
 	return;

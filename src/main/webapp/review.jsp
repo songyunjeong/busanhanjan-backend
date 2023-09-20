@@ -64,15 +64,15 @@
       </div>
     </header>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.jsp">리뷰 쓰기</a>
+		<a class="navbar-brand" href="./review.jsp">리뷰 쓰기</a>
 
-			<form action="./index.jsp" method="get" class="form-inline my-2 my-lg-0">
+			<form action="./review.jsp" method="get" class="form-inline my-2 my-lg-0">
 				<input type="text" name="search" class="form-control mr-sm-2" type="search" placeholder="내용을 입력하세요." aria-label="Search"/>
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
 			</form>
 	</nav>
 	<section class="container">
-		<form method="get" action="./index.jsp" class="form-inline mt-3">
+		<form method="get" action="./review.jsp" class="form-inline mt-3">
 			<select name="lectureDivide" class="form-control mx-1 mt-2">
 				<option value="전체">전체</option>
 				<option value="술" <% if(lectureDivide.equals("술")) out.println("selected"); %>>술</option>

@@ -62,10 +62,10 @@ public class EvaluationDAO {
 		try {
 			if(searchType.equals("최신순")) {
 				sql = "SELECT * FROM evaluation WHERE lectureDivide LIKE ? AND lectureName || professorName || evaluationTitle || evaluationContent LIKE "
-						+ "? ORDER BY evaluationID";
+						+ "? ORDER BY evaluationID DESC";
 			} else if (searchType.equals("추천순")) {
 				sql = "SELECT * FROM evaluation WHERE lectureDivide LIKE ? AND lectureName || professorName || evaluationTitle || evaluationContent LIKE "
-						+ "? ORDER BY likeCount";
+						+ "? ORDER BY likeCount DESC";
 			}
 			conn = DatabaseUtil.getConnection();
 			pstmt = conn.prepareStatement(sql);
