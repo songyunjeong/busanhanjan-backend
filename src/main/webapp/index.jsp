@@ -232,7 +232,8 @@
         <h2 class="u-text u-text-default u-text-1" data-href="bar.jsp">
           #에디터 추천 #술집 맛집
         </h2>
-        <button type="button" onclick="location.href='pubController.jsp'" class="pubData_btn">가게 등록 및 조회</button>
+        <button type="button" onclick="location.href='pubController.jsp'">가게 등록 및 조회</button>
+        <button type="button" onclick="location.href='review.jsp'">리뷰</button>
         <div class="u-expanded-width u-layout-horizontal u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div

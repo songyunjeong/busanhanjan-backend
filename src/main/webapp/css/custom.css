@@ -1,0 +1,14 @@
+@import url(https://fonts.google.com/noto/specimen/Noto+Sans+KR?sort=popularity);
+@import url(https://fonts.google.com/specimen/Nanum+Gothic?query=nanum);
+
+nav {
+	margin-top: 74px;
+}
+
+.navbar-brand, h1,h2, h3, h4, h5 {
+	font-family: 'Noto+Sans+KR';
+}
+
+footer {
+	position: inherit;
+}
