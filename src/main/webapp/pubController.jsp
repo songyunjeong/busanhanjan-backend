@@ -14,12 +14,17 @@
 	
 		String searchKeyword = request.getParameter("keyword");
 		String searchMenu = request.getParameter("menu");
-		boolean filterByStar = Boolean.parseBoolean(request.getParameter("filterByStar"));
+		String searchAlcohol = request.getParameter("alcohol");
 		String searchPname = request.getParameter("pname");
+		boolean filterByStar = Boolean.parseBoolean(request.getParameter("filterByStar"));
 	
+		// 임시
+// 		boolean filterByStar = (request.getSession().getAttribute("filterByStar") != null) ? (boolean) request.getSession().getAttribute("filterByStar") : false;
+// 		request.getSession().setAttribute("filterByStar", filterByStar);
+		
 		ArrayList<PubDO> pubList;
 	
-		// 	System.out.println(searchKeyword + "/" + searchMenu);
+			System.out.println(filterByStar + " / " + searchKeyword + " / " + searchMenu + " / " + searchAlcohol);
 	
 		// 이름 또는 지역 검색
 		if (searchKeyword != null) {
@@ -29,10 +34,11 @@
 	
 		// 메뉴 검색
 		else if (searchMenu != null) {
-			pubList = pubDAO.searchPubByMenu(searchMenu, filterByStar);
+// 			pubList = pubDAO.searchPubByMenu(searchMenu, filterByStar);
+			pubList = pubDAO.searchPubByMenu(searchMenu, searchAlcohol, filterByStar);
 			request.setAttribute("pubList", pubList);
-	
 		}
+
 		// 술맛집 등록
 		else if (searchPname != null) {
 			PubDO pubDO = new PubDO();

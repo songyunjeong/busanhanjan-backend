@@ -119,9 +119,9 @@ public class PubDAO {
 		ArrayList<PubDO> pubList = new ArrayList<PubDO>();
 
 		if (filterByStar) {
-			sql = "SELECT * FROM pub WHERE star >= 4";
+			sql = "SELECT * FROM pub WHERE star >= 4 ORDER BY pcheck, pno";
 		} else {
-			sql = "SELECT * FROM pub";
+			sql = "SELECT * FROM pub ORDER BY pcheck, pno";
 		}
 
 		try {
@@ -194,20 +194,61 @@ public class PubDAO {
 	}
 
 	// 메뉴로 검색
-	public ArrayList<PubDO> searchPubByMenu(String searchMenu, boolean filterByStar) {
-		ArrayList<PubDO> pubList = new ArrayList<PubDO>();
-		String sql;
+//	public ArrayList<PubDO> searchPubByMenu(String searchMenu, boolean filterByStar) {
+//		ArrayList<PubDO> pubList = new ArrayList<PubDO>();
+//		String sql;
+//
+//		if (filterByStar) {
+//			sql = "SELECT * FROM pub WHERE menu LIKE ? AND star >= 4";
+//		} else {
+//			sql = "SELECT * FROM pub WHERE menu LIKE ?";
+//		}
+//
+//		try {
+//			pstmt = conn.prepareStatement(sql);
+//			pstmt.setString(1, "%" + searchMenu + "%");
+//			rs = pstmt.executeQuery();
+//
+//			while (rs.next()) {
+//				PubDO pubDO = new PubDO();
+//				pubDO.setMenu(rs.getString("menu"));
+//				pubDO.setPname(rs.getString("pname"));
+//				pubDO.setAlcohol(rs.getString("alcohol"));
+//				pubDO.setPlace(rs.getString("place"));
+//				pubDO.setTel(rs.getString("tel"));
+//				pubDO.setStar(rs.getDouble("star"));
+//				pubList.add(pubDO);
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		} finally {
+//			if (pstmt != null) {
+//				try {
+//					pstmt.close();
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}
+//		return pubList;
+//	}
+	
+	// 메뉴와 술로 검색
+	public ArrayList<PubDO> searchPubByMenu(String searchMenu, String searchAlcohol, boolean filterByStar) {
+	    ArrayList<PubDO> pubList = new ArrayList<PubDO>();
+	    String sql;
 
-		if (filterByStar) {
-			sql = "SELECT * FROM pub WHERE menu LIKE ? AND star >= 4";
-		} else {
-			sql = "SELECT * FROM pub WHERE menu LIKE ?";
-		}
+	    if (filterByStar) {
+	        sql = "SELECT * FROM pub WHERE menu LIKE ? AND alcohol LIKE ? AND star >= 4";
+	    } else {
+	        sql = "SELECT * FROM pub WHERE menu LIKE ? AND alcohol LIKE ?";
+	    }
 
-		try {
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, "%" + searchMenu + "%");
-			rs = pstmt.executeQuery();
+	    try {
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, "%" + searchMenu + "%");
+	        pstmt.setString(2, "%" + searchAlcohol + "%");
+	        rs = pstmt.executeQuery();
 
 			while (rs.next()) {
 				PubDO pubDO = new PubDO();
@@ -219,17 +260,19 @@ public class PubDAO {
 				pubDO.setStar(rs.getDouble("star"));
 				pubList.add(pubDO);
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			if (pstmt != null) {
-				try {
-					pstmt.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		return pubList;
+
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        // 리소스 해제
+	        try {
+	            if (pstmt != null) pstmt.close();
+	            if (rs != null) rs.close();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	    return pubList;
 	}
 }

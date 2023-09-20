@@ -14,7 +14,7 @@ public class PubDO {
 	private String tel;
 	private double star;
 	private int plike;
-	private int acheck;
+	private int pcheck;
 	private String homepage;	
 	private String link;
 
@@ -93,12 +93,12 @@ public class PubDO {
 		this.plike = plike;
 	}
 
-	public int getAcheck() {
-		return acheck;
+	public int getPcheck() {
+		return pcheck;
 	}
 
-	public void setAcheck(int acheck) {
-		this.acheck = acheck;
+	public void setPcheck(int pcheck) {
+		this.pcheck = pcheck;
 	}
 
 	public String getHomepage() {
