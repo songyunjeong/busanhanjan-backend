@@ -49,7 +49,7 @@
 <!-- 		<label for="filterCheckBox">별점 4점 이상만 보기</label> -->
 		<br />
 <!-- 		<fieldset> -->
-		<form method="POST">
+		<form method="POST" class="float float_first">
 			<fieldset>
 				<legend>가게 검색</legend>
 	
@@ -59,9 +59,8 @@
 				
 			</fieldset>
 		</form>
-		<br />
 		
-		<form method="POST">
+		<form method="POST" class="float">
 			<fieldset>
 				<legend>메뉴 검색</legend>
 	
@@ -74,10 +73,8 @@
 			</fieldset>
 		</form>	
 <!-- 		</fieldset> -->
-		<br />
-
 		
-		<form method="POST">
+		<form method="POST" class="float_clear">
 			<fieldset>
 				<legend>입력</legend>
 	

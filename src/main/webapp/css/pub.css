@@ -115,6 +115,19 @@ input[type="text"] {
 	margin-right: 15px;
 }
 
+.float {
+	float: left;
+}
+
+.float_first {
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+
+.float_clear {
+	clear: both;
+}
+
 /* 목록 스타일링 */
 .pub-info {
 	list-style: none;
