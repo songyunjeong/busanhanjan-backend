@@ -25,7 +25,7 @@ ALTER SESSION SET NLS_LANGUAGE = 'AMERICAN';
 
 -- PUB 테이블 생성
 CREATE TABLE pub (
-    pno NUMBER(7) CONSTRAINT pub_pno_pk PRIMARY KEY,
+    pno NUMBER(7),
     pname VARCHAR2(45) CONSTRAINT pub_pname_nn NOT NULL,
     menu VARCHAR2(45) CONSTRAINT pub_menu_nn NOT NULL,
     alcohol VARCHAR2(45),
