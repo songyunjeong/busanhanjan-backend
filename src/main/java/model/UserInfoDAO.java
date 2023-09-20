@@ -7,6 +7,7 @@ public class UserInfoDAO {
 	private Connection conn;
 	private Statement stmt;
 	private PreparedStatement pstmt;
+	private ResultSet rs;
 	private String sql;
 	
 	public UserInfoDAO() {
@@ -25,7 +26,7 @@ public class UserInfoDAO {
 	
 	public int insertUserInfo(UserInfoDO userDO) {
 		int rowCount = 0;
-		sql = "insert into user_info (username, id, pwd, email) values (?, ?, ?, ?)";
+		sql = "insert into bshj_user (username, id, pwd, email)	 values (?, ?, ?, ?)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -48,6 +49,27 @@ public class UserInfoDAO {
 		}
 		
 		return rowCount;
+	}
+	
+	public boolean checkLogin(String id, String pwd) {
+		boolean result = false;
+		sql = "select pwd from bshj_user where id = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				if (rs.getString(1).equals(pwd)) {
+					result = true;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 	
 }

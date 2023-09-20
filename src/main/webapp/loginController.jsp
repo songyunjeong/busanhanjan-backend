@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
-<jsp:useBean id="loginBean" class="model.LoginBean" scope="session" />
+<jsp:useBean id="userInfoDAO" class="model.UserInfoDAO" scope="session" />
 
 <%
 	if (request.getMethod().equals("POST")) {
@@ -22,7 +22,7 @@
 		if (request.getMethod().equals("GET")) {
 			pageContext.forward(viewPath + "login.jsp");
 		} else if (request.getMethod().equals("POST") && command != null && command.equals("login")) {
-			if (loginBean.checkLogin(request.getParameter("id"), request.getParameter("pwd"))) {
+			if (userInfoDAO.checkLogin(request.getParameter("id"), request.getParameter("pwd"))) {
 				session.setAttribute("loginId", request.getParameter("id"));
 				pageContext.forward(viewPath + "loginProc.jsp");
 			} else {

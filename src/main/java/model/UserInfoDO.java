@@ -1,6 +1,9 @@
 package model;
 
 public class UserInfoDO {
+	
+	private String ID;
+	private String PWD;
 
 	private String username;
 	private String id;
@@ -8,6 +11,14 @@ public class UserInfoDO {
 	private String email;
 	
 	public UserInfoDO() {
+	}
+
+	public String getID() {
+		return ID;
+	}
+
+	public String getPWD() {
+		return PWD;
 	}
 
 	public String getUsername() {

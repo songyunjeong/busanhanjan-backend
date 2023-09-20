@@ -23,6 +23,10 @@ label {
   margin-bottom: 10px;
 }
 
+legend {
+  font-size: 24pt;
+}
+
 /* header */
 .header {
   width: 100%;
@@ -84,10 +88,9 @@ label {
   text-align: left;
 }
 
-.join-area #username,
-.join-area #id,
-.join-area #pwd,
-.join-area #email {
+.join-area input[type="text"],
+.join-area input[type="password"],
+.join-area input[type="email"] {
   font-family: sans-serif;
 }
 

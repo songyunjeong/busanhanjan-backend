@@ -15,9 +15,6 @@
 	    <link
 	      rel="stylesheet"
 	      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-	      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-	      crossorigin="anonymous"
-	      referrerpolicy="no-referrer"
 	    />
 	</head>
 	<body>
@@ -45,7 +42,7 @@
 				<h2>로그인 되었습니다.</h2><br />
 				<h4>[ ${loginId} ]님의 방문을 환영합니다!</h4>
 				<br /><br />
-				<button><a href="./loginController.jsp?command=logout">로그아웃</a></button>
+				<button type="button" onclick="location.href='./loginController.jsp?command=logout'">로그아웃</button>
 			</div>
 		</div>
 	</body>

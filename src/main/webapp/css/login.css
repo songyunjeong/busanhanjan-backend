@@ -86,3 +86,8 @@ li {
   display: inline-block;
   width: 80px;
 }
+
+.login-area input[type="text"],
+.login-area input[type="password"] {
+  font-family: sans-serif;
+}
