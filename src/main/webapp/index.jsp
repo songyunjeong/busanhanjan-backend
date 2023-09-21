@@ -229,11 +229,13 @@
       <div
         class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1"
       >
+      	<div class="backend_btn_box">
+        	<button type="button" onclick="location.href='pubController.jsp'" class="backend_btn">가게 등록 및 조회</button>
+        	<button type="button" onclick="location.href='review.jsp'" class="backend_btn">리뷰</button>
+        </div>
         <h2 class="u-text u-text-default u-text-1" data-href="bar.jsp">
           #에디터 추천 #술집 맛집
         </h2>
-        <button type="button" onclick="location.href='pubController.jsp'">가게 등록 및 조회</button>
-        <button type="button" onclick="location.href='review.jsp'">리뷰</button>
         <div class="u-expanded-width u-layout-horizontal u-list u-list-1">
           <div class="u-repeater u-repeater-1">
             <div

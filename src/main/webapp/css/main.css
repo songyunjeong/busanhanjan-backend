@@ -334,3 +334,26 @@
   .u-section-6 .u-layout-cell-3 { min-height: 352px; }
   .u-section-6 .u-container-layout-3 { padding-bottom: 0; }
 }
+
+.backend_btn_box {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.backend_btn_box > button:first-child {
+	margin-right: 10px;
+}
+
+.backend_btn {
+	border: 3px solid #e5e5e5;
+	border-radius: 8px;
+	padding: 8px 20px;
+	font-family: inherit;
+	letter-spacing: 2px;
+	color: white;
+	background-image: linear-gradient(to right, #47c3c9, #f1c50e);
+}
+
+.backend_btn:hover {
+	cursor: pointer;
+}
